@@ -1,4 +1,4 @@
-import { useTheme } from "./hooks/useTheme";
+
 import Navbar from "./layout/Navbar";
 import About from "./section/About";
 import Experience from "./section/Experience";
