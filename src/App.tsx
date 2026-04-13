@@ -9,7 +9,7 @@ import {Experience} from "./section/Experience";
 import { Hero } from "./section/Hero";
 
 import {Projects} from "./section/Projects";
-import Testimonials from "./section/Testimonials";
+
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <About />
         <Experience />
         <Projects />
-        <Testimonials />
+        
         <Contact/>
         <Footer/>
       </main>

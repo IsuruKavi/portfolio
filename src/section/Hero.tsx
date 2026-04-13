@@ -8,8 +8,6 @@ import {
   Download,
 } from "lucide-react";
 
-
-
 const skills = [
   "React",
   "Next.js",
@@ -76,24 +74,26 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <button className="  glass rounded-full bg-primary/10 justify-center items-center px-8 py-4 hover:border-primary/50 transition-all  flex gap-2">
-                <span className="text-md font-medium text-white">
-                  Contact Me
-                </span>
+              <button className="  glass rounded-full bg-primary/20 border-2 justify-center items-center px-8 py-4 hover:border-primary/50 transition-all  flex gap-2">
+                <span className="text-md font-medium text-lg">Contact Me</span>
+
                 <ArrowRight className="w-5 h-5" />
               </button>
-            
-              {/* Floating Badge */}
+
+              {/* Floating Download Button */}
               <button
-                className="  glass  justify-center items-center  animate-float flex gap-2  hover:border-primary/50 transition-all 
-        duration-1000 focus:outline-none focus-visible:ring-2 
-        focus-visible:ring-primary focus-visible:ring-offset-2 
+                className="animate-float relative bg-transparent border-2 border-border  
+        text-foreground hover:border-primary hover:border-2 transition-all flex gap-2 items-center
+        duration-500  
+       
         disabled:opacity-50 disabled:cursor-not-allowed group 
-        px-8 py-4 text-lg font-medium rounded-full overflow-visible 
-        animated-border"
+        px-8 py-4 text-lg font-medium rounded-full 
+        animated-border glass"
               >
-                <Download className="w-5 h-5 " color="green" />
-                <span className="text-md font-medium">Download CV</span>
+                <Download className="w-5 h-5 text-primary" />
+                <span className="text-md font-medium text-white">
+                  Download CV
+                </span>
               </button>
             </div>
 
@@ -131,9 +131,6 @@ export const Hero = () => {
                   alt="Pedro Machado"
                   className="w-full aspect-[4/5] object-cover rounded-2xl"
                 />
-
-              
-              
               </div>
             </div>
           </div>

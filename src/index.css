@@ -17,15 +17,41 @@
     --color-surface: #1a2329;
   }
 
-  .theme-orange {
-    --color-primary: #f97316;
-    --color-secondary-foreground: #f97316;
-    --color-highlight: #fbbf24;
-    --color-background: #0f0e0c;
-    --color-card: #1c1814;
-    --color-surface: #211d18;
-  }
-
+  .theme-amber {
+  --color-primary: #f59e0b;
+  --color-secondary-foreground: #f59e0b;
+  --color-highlight: #fbbf24;
+  --color-background: #0f0e0a;
+  --color-card: #1c1812;
+  --color-surface: #211d16;
+  --color-muted: #25201a;
+  --color-muted-foreground: #8a7d6f;
+  --color-border: #2a241e;
+}
+.theme-cyan {
+  --color-primary: #06b6d4;
+  --color-secondary-foreground: #06b6d4;
+  --color-highlight: #22d3ee;
+  --color-background: #0a0f10;
+  --color-card: #141a1c;
+  --color-surface: #182022;
+  --color-muted: #1a2528;
+  --color-muted-foreground: #6f858a;
+  --color-border: #1f2c2f;
+}
+.theme-red {
+  --color-primary: #991b1b;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #2a1012;
+  --color-secondary-foreground: #b91c1c;
+  --color-highlight: #ef4444;
+  --color-background: #080405;
+  --color-card: #140a0c;
+  --color-surface: #1c0e11;
+  --color-muted: #241316;
+  --color-muted-foreground: #866268;
+  --color-border: #2a181c;
+}
   .theme-purple {
     --color-primary: #a855f7;
     --color-secondary-foreground: #a855f7;
@@ -34,6 +60,27 @@
     --color-card: #15121f;
     --color-surface: #1b1828;
   }
+.theme-navy {
+  --color-primary: #0059ff;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #0d1425;
+  --color-secondary-foreground: #3385ff;
+  --color-highlight: #66a3ff;
+  --color-background: #080c14;
+  --color-card: #0f1420;
+  --color-surface: #161c2c;
+  --color-muted: #1a2236;
+  --color-muted-foreground: #8a94b0;
+  --color-border: #222d45;
+}
+.theme-indigo {
+  --color-primary: #6366f1;
+  --color-secondary-foreground: #6366f1;
+  --color-highlight: #818cf8;
+  --color-background: #0a0a14;
+  --color-card: #141424;
+  --color-surface: #181830;
+}
 }
 
 @theme {
@@ -200,9 +247,9 @@
   }
 
   .animated-border:hover {
-    background-color: color-mix(in srgb, #26c4b8 15%, transparent);
+    background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
     backdrop-filter: blur(16px);
-    box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent);
+    box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent);
   }
 
   .timeline-glow {
