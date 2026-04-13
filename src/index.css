@@ -196,7 +196,9 @@
   .animate-fade-in {
     animation: fade-in 0.5s ease-out both;
   }
-
+.animate-fade-in-fast {
+    animation: fade-in 0.3s ease-out both;
+  }
   .animate-float {
     animation: float 4s ease-in-out infinite;
   }

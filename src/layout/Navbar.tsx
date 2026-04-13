@@ -86,15 +86,12 @@ const Navbar = () => {
             {/* Theme drop down menu */}
             {/* Theme dropdown menu - appears only when open */}
             {isDropdownOpen && (
-              <div className=" theme-dropdown absolute mt-2 p-2 glass rounded-3xl right-0  z-50">
+              <div className=" theme-dropdown absolute mt-2 p-2 glass rounded-3xl right-0   z-50" >
                 {themes.map((theme) => (
                   <button
                     key={theme.name}
-                    className="block px-3 py-2 text-sm w-full rounded-2xl transition-all duration-200 hover:scale-[1.02]"
-                    style={{
-                      background: "transparent",
-                      transition: "background 0.2s ease",
-                    }}
+                    className="block px-3 py-2 text-sm w-full rounded-2xl  animate-fade-in-fast  hover:scale-[1.02]"
+                   
                     onMouseEnter={(e) => {
                       e.currentTarget.style.background = `${theme.bg_color}20`; // 12% opacity on hover
                     }}
