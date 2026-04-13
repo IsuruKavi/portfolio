@@ -1,6 +1,8 @@
 
+
 import Navbar from "./layout/Navbar";
 import { About } from "./section/About";
+import { Contact } from "./section/Contact";
 
 import Experience from "./section/Experience";
 import { Hero } from "./section/Hero";
@@ -18,6 +20,7 @@ function App() {
         <Experience />
         <Projects />
         <Testimonials />
+        <Contact/>
       </main>
     </div>
   );
