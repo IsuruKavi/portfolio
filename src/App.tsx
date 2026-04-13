@@ -2,7 +2,8 @@
 import Navbar from "./layout/Navbar";
 import About from "./section/About";
 import Experience from "./section/Experience";
-import Hero from "./section/Hero";
+import { Hero } from "./section/Hero";
+
 import Projects from "./section/Projects";
 import Testimonials from "./section/Testimonials";
 
