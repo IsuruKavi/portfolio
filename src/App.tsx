@@ -1,6 +1,7 @@
 
 import Navbar from "./layout/Navbar";
-import About from "./section/About";
+import { About } from "./section/About";
+
 import Experience from "./section/Experience";
 import { Hero } from "./section/Hero";
 

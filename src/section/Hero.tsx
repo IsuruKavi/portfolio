@@ -76,7 +76,7 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <button className="  glass rounded-full bg-primary/10 justify-center items-center px-8 py-4 animate-float flex gap-2">
+              <button className="  glass rounded-full bg-primary/10 justify-center items-center px-8 py-4 hover:border-primary/50 transition-all  flex gap-2">
                 <span className="text-md font-medium text-white">
                   Contact Me
                 </span>
