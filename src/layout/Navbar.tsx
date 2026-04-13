@@ -13,13 +13,11 @@ const themes = [
   { color: "Purple", name: "theme-purple", bg_color: "#a855f7" },
   { color: "Green", name: "theme-default", bg_color: "#20b2a6" },
   { color: "Amber", name: "theme-amber", bg_color: "#f59e0b" },
-   { color: "Cyan", name: "theme-cyan", bg_color: "#06b6d4" },
-    // { color: "Red", name: "theme-red", bg_color: "#f43f5e" },
-    { color: "Indigo", name: "theme-indigo", bg_color: "#6366f1" },
-     { color: "Navy", name: "theme-navy", bg_color: " #2563eb" },
-    // { color: "Lime", name: "theme-lime", bg_color: "#84cc16" },
-    
-
+  { color: "Cyan", name: "theme-cyan", bg_color: "#06b6d4" },
+  // { color: "Red", name: "theme-red", bg_color: "#f43f5e" },
+  { color: "Indigo", name: "theme-indigo", bg_color: "#6366f1" },
+  { color: "Navy", name: "theme-navy", bg_color: " #2563eb" },
+  // { color: "Lime", name: "theme-lime", bg_color: "#84cc16" },
 ];
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -48,7 +46,7 @@ const Navbar = () => {
   console.log(isDropdownOpen);
   return (
     <header className="flxe top-0 left-0 bg-transparent py-5">
-      <nav className="container mx-auto px-6 flex flex-row justify-between items-center ">
+      <nav className="container mx-auto px-6 flex flex-row md:justify-between items-center ">
         <a
           href="#"
           className="text-xl font-bold tracking-tight hover:text-primary"
@@ -57,7 +55,7 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden  md:flex md:flex-row gap-2 items-center glass p-3 py-2 rounded-full">
+        <div className="hidden  md:flex md:flex-row gap-2 items-center glass p-3 py-2 ml-auto rounded-full">
           {navLinks.map((link, index) => (
             <a
               className="text-sm rounded-full px-3 py-1 text-muted-foreground hover:text-foreground rouned-full hover:bg-surface"
@@ -70,53 +68,58 @@ const Navbar = () => {
         </div>
 
         {/* Theme change */}
-        <div className="hidden md:block relative">
-          {/* Theme button */}
-         
+        {isMobileMenuOpen && <div className="ml-auto"></div>}
+        {!isMobileMenuOpen && (
+          <div className=" md:block relative ml-auto ">
+            {/* Theme button */}
+
             <button
-              className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition flex gap-2 theme-button items-center group "
+              className="md:p-2 rounded-full md:glass hover:bg-primary/10 hover:text-primary transition flex gap-2 theme-button items-center group "
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             >
               <Palette size={25} />
-              <span className="text-sm text-muted-foreground  group-hover:text-white">Theme</span>
+              <span className="md:block hidden text-sm md:text-muted-foreground  group-hover:text-white">
+                Theme
+              </span>
             </button>
-       
 
-          {/* Theme drop down menu */}
-          {/* Theme dropdown menu - appears only when open */}
-          {isDropdownOpen && (
-            <div className=" theme-dropdown absolute mt-2 p-2 glass rounded-3xl  z-50">
-              {themes.map((theme) => (
-                <button
-                  key={theme.name}
-                  className="block px-3 py-2 text-sm w-full rounded-2xl transition-all duration-200 hover:scale-[1.02]"
-                  style={{
-                    background: "transparent",
-                    transition: "background 0.2s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = `${theme.bg_color}20`; // 12% opacity on hover
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "transparent";
-                  }}
-                  onClick={() => handleThemeChange(theme.name)}
-                >
-                  <div className="flex items-center gap-2">
-                    <div
-                      className="w-4 h-4 rounded-full"
-                      style={{ background: theme.bg_color }}
-                    />
-                    <span>{theme.color}</span>
-                  </div>
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
+            {/* Theme drop down menu */}
+            {/* Theme dropdown menu - appears only when open */}
+            {isDropdownOpen && (
+              <div className=" theme-dropdown absolute mt-2 p-2 glass rounded-3xl right-0  z-50">
+                {themes.map((theme) => (
+                  <button
+                    key={theme.name}
+                    className="block px-3 py-2 text-sm w-full rounded-2xl transition-all duration-200 hover:scale-[1.02]"
+                    style={{
+                      background: "transparent",
+                      transition: "background 0.2s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = `${theme.bg_color}20`; // 12% opacity on hover
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = "transparent";
+                    }}
+                    onClick={() => handleThemeChange(theme.name)}
+                  >
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="w-4 h-4 rounded-full"
+                        style={{ background: theme.bg_color }}
+                      />
+                      <span>{theme.color}</span>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
         {/* Mobile Menu button */}
         <button
-          className="md:hidden p-2 text-foreground"
+          className="md:hidden p-2 text-foreground "
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
         >
           {isMobileMenuOpen ? <X /> : <Menu size={24} />}
@@ -134,41 +137,6 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          {/* CTA Button */}
-          <div className=" md:hidden">
-            <Button size="sm" className="w-full theme-button"   onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-              <Palette />
-            </Button>
-               {isDropdownOpen && (
-            <div className=" theme-dropdown  mt-2 p-2 glass  rounded-3xl  z-50 transition-all duration-200">
-              {themes.map((theme) => (
-                <button
-                  key={theme.name}
-                  className="block px-3 py-2 text-sm w-full rounded-2xl transition-all duration-600 hover:scale-[1.02] justify-center items-center"
-                  style={{
-                    background: "transparent",
-                    transition: "background 0.2s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = `${theme.bg_color}20`; // 12% opacity on hover
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "transparent";
-                  }}
-                  onClick={() => handleThemeChange(theme.name)}
-                >
-                  <div className="flex items-center  gap-2">
-                    <div
-                      className="w-4 h-4 rounded-full"
-                      style={{ background: theme.bg_color }}
-                    />
-                    <span>{theme.color}</span>
-                  </div>
-                </button>
-              ))}
-            </div>
-          )}
-          </div>
         </div>
       )}
     </header>
