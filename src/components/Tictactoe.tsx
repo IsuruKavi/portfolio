@@ -151,12 +151,14 @@ const Tictactoe = () => {
 
   return (
     <div className="flex flex-col items-center justify-center  p-4 animate-fadeIn ">
-      <div className=" mb-6 flex justify-between items-center   w-auto">
+      <div className=" mb-2 flex justify-between items-center   w-auto">
         <div className=" glass rounded-xl px-4 py-3 animate-float">
           <div className="flex items-center gap-3">
             <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
-            <span className=" text-xl font-bold"><span className="text-primary text-2xl font-bold">Play!!
-              </span> Tic Tac Toe</span>
+            <span className=" text-xl font-bold">
+              <span className="text-primary text-2xl font-bold">Play!!</span>{" "}
+              Tic Tac Toe
+            </span>
           </div>
         </div>
       </div>
@@ -177,8 +179,9 @@ const Tictactoe = () => {
         <div>
           <button
             onClick={resetGame}
-            className="p-2 rounded-full hover:bg-primary/10 hover:text-primary transition-all duration-300 hover:rotate-180  "
+            className="p-2 rounded-full bg-primary/10 hover:bg-primary/30 glass hover:text-primary transition-all duration-300 hover:rotate-180 flex gap-2 "
           >
+        
             <RotateCcw className="w-5 h-5" />
           </button>{" "}
         </div>

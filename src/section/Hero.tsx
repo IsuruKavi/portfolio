@@ -37,16 +37,16 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Bg */}
       <div className="absolute inset-0">
-        <img
+        {/* <img
           src="/hero-bg.jpg"
           alt="Hero image"
           className="w-full h-full object-cover opacity-40"
-        />
+        /> */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
+      <div className="container mx-auto px-6 pt-10 md:pt-32 pb-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="space-y-8">
@@ -85,7 +85,7 @@ export const Hero = () => {
 
               {/* Floating Download Button */}
               <button
-                className="animate-float relative bg-transparent border-2 border-border  
+                className="md:animate-float relative bg-transparent border-2 border-border  
         text-foreground hover:border-primary hover:border-2 transition-all flex gap-2 items-center
         duration-500 
         disabled:opacity-50 disabled:cursor-not-allowed group 
