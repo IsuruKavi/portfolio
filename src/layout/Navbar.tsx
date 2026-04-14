@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Button from "../components/Button";
+
 import { Menu, Palette, X } from "lucide-react";
 import { useTheme } from "../hooks/useTheme";
 const navLinks = [

@@ -8,6 +8,9 @@ import {
   Download,
 } from "lucide-react";
 
+import Dino from "../components/Tictactoe";
+import Tictactoe from "../components/Tictactoe";
+
 const skills = [
   "React",
   "Next.js",
@@ -74,7 +77,7 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <button className="  glass rounded-full bg-primary/20 border-2 justify-center items-center px-8 py-4 hover:border-primary/50 transition-all  flex gap-2">
+              <button className="  glass rounded-full bg-primary/20 border-2 justify-center items-center px-8 py-4 hover:border-primary/50 transition-all  flex gap-2 w-52">
                 <span className="text-md font-medium text-lg">Contact Me</span>
 
                 <ArrowRight className="w-5 h-5" />
@@ -84,11 +87,10 @@ export const Hero = () => {
               <button
                 className="animate-float relative bg-transparent border-2 border-border  
         text-foreground hover:border-primary hover:border-2 transition-all flex gap-2 items-center
-        duration-500  
-       
+        duration-500 
         disabled:opacity-50 disabled:cursor-not-allowed group 
         px-8 py-4 text-lg font-medium rounded-full 
-        animated-border glass"
+        animated-border glass w-52"
               >
                 <Download className="w-5 h-5 text-primary" />
                 <span className="text-md font-medium text-white">
@@ -115,22 +117,12 @@ export const Hero = () => {
               ))}
             </div>
           </div>
-          {/* Right Column - Profile Image */}
-          <div className="relatice animate-fade-in animation-delay-300">
+          {/* Right Column - dino game */}
+          <div className="relatice animate-fade-in animation-delay-300 ">
             {/* Profile Image */}
-            <div className="relative max-w-md mx-auto">
-              <div
-                className="absolute inset-0 
-              rounded-3xl bg-gradient-to-br 
-              from-primary/30 via-transparent 
-              to-primary/10 blur-2xl animate-pulse"
-              />
-              <div className="relative glass rounded-3xl p-2 glow-border">
-                <img
-                  src="/profile-photo.jpg"
-                  alt="Pedro Machado"
-                  className="w-full aspect-[4/5] object-cover rounded-2xl"
-                />
+            <div className="relative  mx-auto">
+              <div className="relative  rounded-3xl">
+                <Tictactoe />
               </div>
             </div>
           </div>
