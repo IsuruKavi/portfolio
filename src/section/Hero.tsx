@@ -138,7 +138,7 @@ export const Hero = () => {
           <div className="relatice animate-fade-in animation-delay-300 ">
             {/* Profile Image */}
             <div className="relative  mx-auto">
-              <div className="relative  rounded-3xl">{/* <Tictactoe /> */}</div>
+              <div className="relative  rounded-3xl"><Tictactoe /></div>
             </div>
           </div>
         </div>
@@ -167,7 +167,7 @@ export const Hero = () => {
                     <div className="flex flex-col items-center gap-2">
                       <Icon className="text-2xl  hover:text-bg-primary transition-colors text-bg-primary" />
 
-                      <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                      <span className="text-xl font-normal text-muted-foreground/50 hover:text-muted-foreground transition-colors">
                         {skill.name}
                       </span>
                     </div>
