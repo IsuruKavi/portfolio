@@ -11,25 +11,42 @@ import {
 import Dino from "../components/Tictactoe";
 import Tictactoe from "../components/Tictactoe";
 
+import {
+  FaReact,
+  FaNodeJs,
+  FaDocker,
+  FaAws,
+  FaGitAlt,
+  FaJava,
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiNextdotjs,
+  SiSpringboot,
+  SiExpress,
+  SiPostgresql,
+  SiMongodb,
+  SiTailwindcss,
+  SiGithubactions,
+  SiJavascript,
+} from "react-icons/si";
+
 const skills = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Node.js",
-  "GraphQL",
-  "PostgreSQL",
-  "MongoDB",
-  "Redis",
-  "Docker",
-  "AWS",
-  "Vercel",
-  "Tailwind CSS",
-  "Prisma",
-  "Jest",
-  "Cypress",
-  "Figma",
-  "Git",
-  "GitHub Actions",
+  { name: "JavaScript", icon: SiJavascript },
+  { name: "Java", icon: FaJava },
+  { name: "TypeScript", icon: SiTypescript },
+  { name: "React", icon: FaReact },
+  { name: "Next.js", icon: SiNextdotjs },
+  { name: "SpringBoot", icon: SiSpringboot },
+  { name: "Node.js", icon: FaNodeJs },
+  { name: "Express.js", icon: SiExpress },
+  { name: "PostgreSQL", icon: SiPostgresql },
+  { name: "MongoDB", icon: SiMongodb },
+  { name: "Docker", icon: FaDocker },
+  { name: "AWS", icon: FaAws },
+  { name: "Tailwind CSS", icon: SiTailwindcss },
+  { name: "Git", icon: FaGitAlt },
+  { name: "GitHub Actions", icon: SiGithubactions },
 ];
 
 export const Hero = () => {
@@ -121,9 +138,7 @@ export const Hero = () => {
           <div className="relatice animate-fade-in animation-delay-300 ">
             {/* Profile Image */}
             <div className="relative  mx-auto">
-              <div className="relative  rounded-3xl">
-                <Tictactoe />
-              </div>
+              <div className="relative  rounded-3xl">{/* <Tictactoe /> */}</div>
             </div>
           </div>
         </div>
@@ -142,14 +157,23 @@ export const Hero = () => {
               className="absolute right-0 top-0 bottom-0 w-32
              bg-gradient-to-l from-background to-transparent z-10"
             />
+           
             <div className="flex animate-marquee">
-              {[...skills, ...skills].map((skill, idx) => (
-                <div key={idx} className="flex-shrink-0 px-8 py-4">
-                  <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
-                    {skill}
-                  </span>
-                </div>
-              ))}
+              {[...skills, ...skills].map((skill, idx) => {
+                const Icon = skill.icon;
+
+                return (
+                  <div key={idx} className="flex-shrink-0 px-8 py-4">
+                    <div className="flex flex-col items-center gap-2">
+                      <Icon className="text-2xl  hover:text-bg-primary transition-colors text-bg-primary" />
+
+                      <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                        {skill.name}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
