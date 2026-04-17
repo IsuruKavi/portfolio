@@ -3,41 +3,27 @@ import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
 const projects = [
   {
-    title: "Fintech Dashboard",
+    title: "Socialic",
     description:
-      "A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights.",
-    image: "/projects/project1.png",
-    tags: ["React", "Typescript", "NodeJS"],
+      "Developed AI-powered content recommendations for a SaaS social media platform, improving content creation efficiency using Next.js and Express.js.",
+    tags: ["Next.js", "Express.js", "MongoDB"],
     link: "#",
-    github: "#",
   },
   {
-    title: "E-Commerce Platform",
+    title: "Anytask",
     description:
-      "A full-featured e-commerce solution with inventory management, payment processing, and analytics dashboard.",
-    image: "/projects/project2.png",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
+      "Built a mobile marketplace app with React Native, integrating authentication, Genie payments, and Firebase services for notifications and analytics.",
+    tags: ["React Native", "Firebase", "MongoDB", "Express.js"],
     link: "#",
-    github: "#",
   },
   {
-    title: "AI Writing Assistant",
+    title: "Voclix",
     description:
-      "An intelligent writing tool powered by GPT-4, helping users create better content faster.",
-    image: "/projects/project3.png",
-    tags: ["React", "OpenAI", "Python", "FastAPI"],
+      "Engineered an AI-driven English learning app with offline-first support, AWS Cognito authentication, and interactive learning modules.",
+    tags: ["React Native", "Express.js", "SQLite"],
     link: "#",
-    github: "#",
   },
-  {
-    title: "Project Management Tool",
-    description:
-      "A collaborative workspace for teams with real-time updates, task tracking, and integrations.",
-    image: "/projects/project4.png",
-    tags: ["Next.js", "Socket.io", "MongoDB", "Redis"],
-    link: "#",
-    github: "#",
-  },
+
 ];
 
 export const Projects = () => {

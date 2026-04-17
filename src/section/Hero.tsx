@@ -41,26 +41,31 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <a className="  glass rounded-full bg-primary/20 border-2 justify-center items-center px-8 py-4 hover:border-primary/50 transition-all  flex gap-2 w-52" href="#contact">
+              <a
+                className="  glass rounded-full bg-primary/20 border-2 justify-center items-center px-8 py-4 hover:border-primary/50 transition-all  flex gap-2 w-52"
+                href="#contact"
+              >
                 <span className="text-md font-medium text-lg">Contact Me</span>
 
                 <ArrowRight className="w-5 h-5" />
               </a>
 
               {/* Floating Download Button */}
-              <button
-                className="md:animate-float relative bg-transparent border-2 border-border  
+              <a href="/CV_RVIK_Lakshan.pdf" download>
+                <button
+                  className="md:animate-float relative bg-transparent border-2 border-border  
         text-foreground hover:border-primary hover:border-2 transition-all flex gap-2 items-center
         duration-500 
         disabled:opacity-50 disabled:cursor-not-allowed group 
         px-8 py-4 text-lg font-medium rounded-full 
         animated-border glass w-52"
-              >
-                <Download className="w-5 h-5 text-primary" />
-                <span className="text-md font-medium text-white">
-                  Download CV
-                </span>
-              </button>
+                >
+                  <Download className="w-5 h-5 text-primary" />
+                  <span className="text-md font-medium text-white">
+                    Download CV
+                  </span>
+                </button>
+              </a>
             </div>
 
             {/* Social Links */}
@@ -69,10 +74,13 @@ export const Hero = () => {
               {[
                 { icon: Github, href: "https://github.com/IsuruKavi" },
                 { icon: Linkedin, href: "https://www.linkedin.com/in/rvikl" },
-                { icon: FaMedium , href: "https://medium.com/@isurukavindalakshan863" },
+                {
+                  icon: FaMedium,
+                  href: "https://medium.com/@isurukavindalakshan863",
+                },
               ].map((social, idx) => (
                 <a
-                 target="_blank"
+                  target="_blank"
                   key={idx}
                   href={social.href}
                   className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
