@@ -6,7 +6,7 @@ const navLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experince" },
-  { href: "#testimonials", label: "Testimonials" },
+  // { href: "#testimonials", label: "Testimonials" },
 ];
 
 const themes = [
@@ -45,7 +45,7 @@ const Navbar = () => {
   };
   console.log(isDropdownOpen);
   return (
-    <header className="flxe top-0 left-0 bg-transparent py-5">
+    <header className="flex top-0 left-0 bg-transparent py-5">
       <nav className="container mx-auto px-6 flex flex-row md:justify-between items-center ">
         <a
           href="#"

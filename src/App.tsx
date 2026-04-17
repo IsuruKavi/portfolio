@@ -9,6 +9,7 @@ import {Experience} from "./section/Experience";
 import { Hero } from "./section/Hero";
 
 import {Projects} from "./section/Projects";
+import Skill from "./section/Skill";
 
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <Skill/>
         <About />
+        
         <Experience />
         <Projects />
         
