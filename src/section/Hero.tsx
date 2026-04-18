@@ -1,11 +1,5 @@
 /* eslint-disable react-hooks/purity */
-import {
-  ArrowRight,
-  ChevronDown,
-  Github,
-  Linkedin,
-  Download,
-} from "lucide-react";
+import { ArrowRight, Github, Linkedin, Download } from "lucide-react";
 import { FaMedium } from "react-icons/fa6";
 import Tictactoe from "../components/Tictactoe";
 

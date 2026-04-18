@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Circle, X, RotateCcw } from "lucide-react";
 
+type Player = "X" | "O";
+
 const Tictactoe = () => {
-  const [board, setBoard] = useState(Array(9).fill(null));
+  const [board, setBoard] = useState<Array<Player | null>>(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
-  const [winner, setWinner] = useState(null);
-  const [winningLine, setWinningLine] = useState([]);
+  const [winner, setWinner] = useState<Player | null>(null);
+  const [winningLine, setWinningLine] = useState<number[]>([]);
   const [isDraw, setIsDraw] = useState(false);
-  const [animateCell, setAnimateCell] = useState(null);
+  const [animateCell, setAnimateCell] = useState<number | null>(null);
 
   const lines = [
     [0, 1, 2],[3, 4, 5],[6, 7, 8],
@@ -15,7 +17,7 @@ const Tictactoe = () => {
     [0, 4, 8],[2, 4, 6],
   ];
 
-  const calculateWinner = (squares) => {
+  const calculateWinner = (squares: Array<Player | null>) => {
     for (let [a, b, c] of lines) {
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
         return { winner: squares[a], line: [a, b, c] };
@@ -27,7 +29,7 @@ const Tictactoe = () => {
   const isBoardFull = (squares) => squares.every((s) => s !== null);
 
   // 🔥 Smart lightweight AI (no recursion)
-  const getSmartMove = (currentBoard) => {
+  const getSmartMove = (currentBoard: Array<Player | null>) => {
     // 1️⃣ Win if possible
     for (let [a, b, c] of lines) {
       const values = [currentBoard[a], currentBoard[b], currentBoard[c]];
@@ -56,7 +58,7 @@ const Tictactoe = () => {
     // 5️⃣ Else random
     const empty = currentBoard
       .map((v, i) => (v === null ? i : null))
-      .filter(v => v !== null);
+      .filter((v): v is number => v !== null);
 
     return empty[Math.floor(Math.random() * empty.length)];
   };
@@ -161,7 +163,7 @@ const Tictactoe = () => {
   </div>
 
 
-      <div className="grid grid-cols-3 gap-2 md:gap-3 bg-gray-900/30 p-4 rounded-2xl backdrop-blur-sm animate-scaleIn">
+      <div className="grid grid-cols-3 gap-2 md:gap-3 bg-gray-900/80 p-4 rounded-2xl backdrop-blur-sm animate-scaleIn glass">
         {board.map((value, index) => {
           const isWinning = winningLine.includes(index);
           const isAnimating = animateCell === index;

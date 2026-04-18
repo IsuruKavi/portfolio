@@ -40,7 +40,7 @@ const skills = [
 
 const Skill = () => {
   return (
-    <div className="mt-20 animate-fade-in animation-delay-600">
+    <div className=" pt-12 animate-fade-in animation-delay-600">
       <p className="text-sm text-muted-foreground mb-6 text-center">
         Technologies I work with
       </p>
@@ -54,22 +54,24 @@ const Skill = () => {
              bg-gradient-to-l from-background to-transparent z-10"
         />
 
-        <div className="flex animate-marquee">
-          {[...skills, ...skills].map((skill, idx) => {
-            const Icon = skill.icon;
+        <div className="overflow-x-auto overflow-y-hidden">
+          <div className="flex animate-marquee">
+            {[...skills, ...skills].map((skill, idx) => {
+              const Icon = skill.icon;
 
-            return (
-              <div key={idx} className="flex-shrink-0 px-8 py-4">
-                <div className="flex flex-col items-center gap-2">
-                  <Icon className="text-2xl  hover:text-bg-primary transition-colors text-bg-primary" />
+              return (
+                <div key={idx} className="flex-shrink-0 px-8 py-4">
+                  <div className="flex flex-col items-center gap-2">
+                    <Icon className="text-2xl  hover:text-bg-primary transition-colors text-bg-primary" />
 
-                  <span className="text-xl font-normal text-muted-foreground/50 hover:text-muted-foreground transition-colors">
-                    {skill.name}
-                  </span>
+                    <span className="text-xl font-normal text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                      {skill.name}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
         
       </div>

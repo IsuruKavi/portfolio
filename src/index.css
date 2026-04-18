@@ -234,7 +234,14 @@
   .animation-delay-800 {
     animation-delay: 800ms;
   }
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
   @keyframes animated-border {
     0% {
       stroke-dashoffset: 400;
@@ -277,4 +284,38 @@
 
 .animate-popIn {
   animation: popIn 0.2s ease-out;
+}
+
+
+
+/* Keep the marquee animation but allow manual scroll override */
+.animate-marquee {
+  animation: marquee 100s linear infinite;
+  width: max-content;
+}
+
+/* Pause animation when user is manually scrolling */
+.overflow-x-auto:active .animate-marquee,
+.overflow-x-auto:focus .animate-marquee,
+.overflow-x-auto:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Hide scrollbar for all browsers */
+.overflow-x-auto {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
 }

@@ -54,10 +54,10 @@ export const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className=" lg:grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact Info */}
-          <div className="space-y-6 animate-fade-in animation-delay-400">
-            <div className="glass rounded-3xl p-8">
+          <div className="space-y-6 animate-fade-in animation-delay-400 mb-6 md:mb-6">
+            <div className="glass rounded-3xl md:p-8 p-4">
               <h3 className="text-xl font-semibold mb-6">
                 Contact Information
               </h3>

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 
 export const useTheme = () => {
-    const [theme, setTheme] = useState(() => localStorage.getItem('theme') || "theme-default");
+    const [theme, setTheme] = useState(() => localStorage.getItem('theme') || "theme-cyan");
     useEffect(() => {
         const root = window.document.documentElement;
         // Handle theme
