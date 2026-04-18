@@ -1,34 +1,42 @@
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, Github, Globe } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
 const projects = [
   {
     title: "Socialic",
     description:
-      "Developed AI-powered content recommendations for a SaaS social media platform for improving content creation efficiency  .",
+      "Developed AI-powered content recommendations for a SaaS social media platform for improving content creation efficiency.",
     tags: ["Next.js", "Express.js", "MongoDB"],
-    link: "#",
+    links: {
+      live: "https://www.socialic.app",
+    },
   },
   {
     title: "Anytask",
     description:
-      "Built a mobile marketplace app with React Native, integrating authentication, Genie payments, and Firebase services for notifications and analytics.",
+      "Contributed to a mobile marketplace app using React Native, working on API integration, authentication, Genie payments, and Firebase-based notifications and analytics.",
     tags: ["React Native", "Firebase", "MongoDB", "Express.js"],
-    link: "#",
+    links: {
+      live: "https://play.google.com/store/apps/details?id=com.skalafy.anytask&hl=en",
+    },
   },
   {
     title: "Voclix",
     description:
-      "Engineered an AI-driven English learning app with offline-first support and interactive learning modules such as impromtu speaking,word practice, writting practice",
+      "Contributed to an AI-driven English learning application, focusing on offline-first functionality and developing interactive modules including impromptu speaking, vocabulary practice, and writing exercises.",
     tags: ["React Native", "Express.js", "SQLite"],
-    link: "#",
+    links: {
+      live: "https://play.google.com/store/apps/details?id=com.skalafy.voclix&hl=en",
+    },
   },
   {
     title: "Patient Management System",
     description:
       "Designed a microservices-based backend system for managing patients, billing, and analytics using Spring Boot. Implemented gRPC for inter-service communication with PostgreSQL and Docker for scalable deployment.",
     tags: ["Java", "Spring Boot", "gRPC", "PostgreSQL", "Docker"],
-    link: "https://github.com/IsuruKavi/Patient-management-system",
+    links: {
+      github: "https://github.com/IsuruKavi/Patient-management-system",
+    },
   },
 ];
 
@@ -51,10 +59,10 @@ export const Projects = () => {
               make an impact.
             </span>
           </h2>
-          <p className="text-muted-foreground animate-fade-in animation-delay-200">
+          {/* <p className="text-muted-foreground animate-fade-in animation-delay-200">
             A selection of my recent work, from complex web applications to
             innovative tools that solve real-world problems.
-          </p>
+          </p> */}
         </div>
 
         {/* Projects Grid */}
@@ -65,35 +73,6 @@ export const Projects = () => {
               className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
               style={{ animationDelay: `${(idx + 1) * 100}ms` }}
             >
-              {/* Image */}
-              <div className="relative overflow-hidden aspect-video">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div
-                  className="absolute inset-0 
-                bg-gradient-to-t from-card via-card/50
-                 to-transparent opacity-60"
-                />
-                {/* Overlay Links */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a
-                    href={project.link}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    <ArrowUpRight className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={project.github}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    <Github className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
-
               {/* Content */}
               <div className="p-6 space-y-4">
                 <div className="flex items-start justify-between">
@@ -120,18 +99,43 @@ export const Projects = () => {
                     </span>
                   ))}
                 </div>
+                <div className="flex items-center gap-3 pt-2">
+                  {project.links?.live && (
+                    <a
+                      href={project.links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-primary hover:underline flex items-center gap-1"
+                    >
+                       <Globe className="w-4 h-4" /> Live
+                    </a>
+                  )}
+
+
+                  {project.links?.github && (
+                    <a
+                      href={project.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-primary hover:underline flex items-center gap-1"
+                    >
+                      <Github className="w-4 h-4" />
+                      Code
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* View All CTA */}
+        {/* View All CTA
         <div className="text-center mt-12 animate-fade-in animation-delay-500">
           <AnimatedBorderButton>
             View All Projects
             <ArrowUpRight className="w-5 h-5" />
           </AnimatedBorderButton>
-        </div>
+        </div> */}
       </div>
     </section>
   );
