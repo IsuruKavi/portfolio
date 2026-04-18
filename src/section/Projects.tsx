@@ -5,7 +5,7 @@ const projects = [
   {
     title: "Socialic",
     description:
-      "Developed AI-powered content recommendations for a SaaS social media platform, improving content creation efficiency using Next.js and Express.js.",
+      "Developed AI-powered content recommendations for a SaaS social media platform for improving content creation efficiency  .",
     tags: ["Next.js", "Express.js", "MongoDB"],
     link: "#",
   },
@@ -19,11 +19,17 @@ const projects = [
   {
     title: "Voclix",
     description:
-      "Engineered an AI-driven English learning app with offline-first support, AWS Cognito authentication, and interactive learning modules.",
+      "Engineered an AI-driven English learning app with offline-first support and interactive learning modules such as impromtu speaking,word practice, writting practice",
     tags: ["React Native", "Express.js", "SQLite"],
     link: "#",
   },
-
+  {
+    title: "Patient Management System",
+    description:
+      "Designed a microservices-based backend system for managing patients, billing, and analytics using Spring Boot. Implemented gRPC for inter-service communication with PostgreSQL and Docker for scalable deployment.",
+    tags: ["Java", "Spring Boot", "gRPC", "PostgreSQL", "Docker"],
+    link: "https://github.com/IsuruKavi/Patient-management-system",
+  },
 ];
 
 export const Projects = () => {
