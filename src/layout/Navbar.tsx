@@ -6,6 +6,7 @@ const navLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experince" },
+  { href: "#contact", label: "Contact" },
   // { href: "#testimonials", label: "Testimonials" },
 ];
 
@@ -23,6 +24,23 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { setTheme } = useTheme();
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      console.log("resize:", width);
+      if (width > 640) {
+        setIsDropdownOpen(false);
+        setIsMobileMenuOpen(false);
+        console.log("resizing");
+      }
+    };
+
+    handleResize(); // run once on mount
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleClickOutside = (event: any) => {
@@ -45,7 +63,7 @@ const Navbar = () => {
   };
   console.log(isDropdownOpen);
   return (
-    <header className="flex top-0 left-0 bg-transparent py-5">
+    <header className="md:flex top-0 left-0 bg-transparent py-5">
       <nav className="container mx-auto px-6 flex flex-row md:justify-between items-center ">
         <a
           href="#"
@@ -86,12 +104,11 @@ const Navbar = () => {
             {/* Theme drop down menu */}
             {/* Theme dropdown menu - appears only when open */}
             {isDropdownOpen && (
-              <div className=" theme-dropdown absolute mt-2 p-2 glass rounded-3xl right-0   z-50" >
+              <div className=" theme-dropdown absolute mt-2 p-2 glass rounded-3xl right-0   z-50">
                 {themes.map((theme) => (
                   <button
                     key={theme.name}
                     className="block px-3 py-2 text-sm w-full rounded-2xl  animate-fade-in-fast  hover:scale-[1.02]"
-                   
                     onMouseEnter={(e) => {
                       e.currentTarget.style.background = `${theme.bg_color}20`; // 12% opacity on hover
                     }}

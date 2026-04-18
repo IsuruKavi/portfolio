@@ -139,24 +139,27 @@ const Tictactoe = () => {
         </div>
       </div>
 
-      <div className="flex gap-2 items-center mb-4">
-        {winner && (
-          <p className="text-md font-semibold animate-pulse text-primary">
-            {winner === "X" ? " You Won! " : " Oh..Try again!"}
-          </p>
-        )}
+    <div className="flex gap-2 items-center mb-4">
+    {winner && (
+      <p className="text-md font-semibold animate-pulse text-primary">
+        {winner === "X" ? " You Won! " : " Oh..Try again! "}
+      </p>
+    )}
 
-        {isDraw && (
-          <p className="text-md font-semibold text-primary"> Game Draw! </p>
-        )}
+    {isDraw && (
+      <p className="text-md font-semibold text-primary animate-bounce">
+        Game Draw! 
+      </p>
+    )}
 
-        <button
-          onClick={resetGame}
-          className="p-2 rounded-full bg-primary/10 hover:bg-primary/30 glass hover:text-primary transition-all duration-300 hover:rotate-180 flex gap-2"
-        >
-          <RotateCcw className="w-5 h-5" />
-        </button>
-      </div>
+    <button
+      onClick={resetGame}
+      className="p-2 rounded-full bg-primary/10 hover:bg-primary/30 glass hover:text-primary transition-all duration-300 hover:rotate-180 flex gap-2"
+    >
+      <RotateCcw className="w-5 h-5" />
+    </button>
+  </div>
+
 
       <div className="grid grid-cols-3 gap-2 md:gap-3 bg-gray-900/30 p-4 rounded-2xl backdrop-blur-sm animate-scaleIn">
         {board.map((value, index) => {
