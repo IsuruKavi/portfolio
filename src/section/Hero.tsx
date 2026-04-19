@@ -45,7 +45,7 @@ export const Hero = () => {
               </a>
 
               {/* Floating Download Button */}
-              <a href="/CV_RVIK_Lakshan.pdf" download>
+              <a href="/portfolio/CV_RVIK_Lakshan.pdf" download>
                 <button
                   className="md:animate-float relative bg-transparent border-2 border-border  
         text-foreground hover:border-primary hover:border-2 transition-all flex gap-2 items-center
